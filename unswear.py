@@ -28,7 +28,7 @@ class Recorder:
         pass
 
     def evaluate_word(self):
-        if self.buffer in self.word_pairs:
+        if self.buffer.lower() in self.word_pairs:
             self.delete_word(len(self.buffer))
             self.keyboard.type(self.word_pairs[self.buffer] + " ")
 
