@@ -1,5 +1,5 @@
 from pynput.keyboard import Listener, Key, Controller, KeyCode
-import csv
+import csv, subprocess
 
 
 class Recorder:
@@ -38,6 +38,7 @@ class Recorder:
 
 if __name__ == "__main__":
     pairs: dict[str, str] = {}
+    subprocess.run(["git", "pull"]) 
     with open('replacements.csv', newline='') as f:
         reader = csv.reader(f)
         for item in reader:
