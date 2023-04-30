@@ -10,6 +10,7 @@ class Recorder:
         self.word_pairs = word_pairs
 
     def on_press(self, key):
+        print(key)
         if key == Key.space:
             self.evaluate_word()
             self.buffer = ""
@@ -43,7 +44,6 @@ if __name__ == "__main__":
         reader = csv.reader(f)
         for item in reader:
             pairs[item[0]] = item[1]
-
     recorder = Recorder(pairs)
 
     with Listener(on_press=recorder.on_press, on_release=recorder.on_release) as listener:
